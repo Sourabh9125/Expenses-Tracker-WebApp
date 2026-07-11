@@ -1,12 +1,14 @@
 name: push to dockerhub
 
 on:
+    push:
+        branches: [test]
     workflow_dispatch:
 
 jobs:
     docker_push:
 
-        runs-on: self-hosted
+        runs-on: ubuntu-latest
 
         steps:
             - name: code clone
@@ -22,7 +24,7 @@ jobs:
               uses: docker/build-push-action@v7
               with:
                 push: true
-                tags: ${{ vars.DOCKERHUB_USERNAME }}/expenses_app:${{ github.sha }}
+                tags: ${{ vars.DOCKERHUB_USERNAME }}/expenses_app:latest
 
         
         

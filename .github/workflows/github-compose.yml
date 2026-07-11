@@ -1,0 +1,17 @@
+name: deploying the application
+
+on:
+    workflow_dispatch:
+
+
+jobs:
+    deploy:
+        env:
+            DOCKERHUB_USERNAME: ${{ vars.DOCKERHUB_USERNAME }}
+        runs-on: self-hosted
+        steps:
+            - name: CODE CHECKOUT   
+              uses: actions/checkout@v5
+
+            - name: docker compose
+              uses: docker compose up -d --force-recreate
