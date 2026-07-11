@@ -1,17 +1,19 @@
 name: CICD
 
 on:
-  workflow_run:
-    workflows: ["push to dockerhub"] # Must exactly match the name of your first workflow
-    types:
-      - completed
+  push:
     branches: [test]
+  # workflow_run:
+  #   workflows: ["push to dockerhub"] # Must exactly match the name of your first workflow
+  #   types:
+  #     - completed
+  #   branches: [test]
 
 
 
 jobs:
   deploy:
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    # if: ${{ github.event.workflow_run.conclusion == 'success' }}
     env:
       DOCKERHUB_USERNAME: ${{ vars.DOCKERHUB_USERNAME }}
     runs-on: self-hosted
