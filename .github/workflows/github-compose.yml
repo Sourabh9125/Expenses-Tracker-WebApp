@@ -15,5 +15,8 @@ jobs:
             - name: CODE CHECKOUT   
               uses: actions/checkout@v5
 
+            - name: Pull latest image
+              run: docker compose pull
+
             - name: docker compose
               run: docker compose up -d --force-recreate
