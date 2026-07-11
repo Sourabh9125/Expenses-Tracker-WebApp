@@ -1,12 +1,7 @@
-name: deploying the application
+name: deploying
 
 on:
-  push:
-        branches: [test]
-  # workflow_run:
-  #   workflows: [push to dockerhub]   # Must exactly match the first workflow's name
-  #   types:
-  #     - completed
+  workflow_dispatch:
 
 
 jobs:
@@ -18,9 +13,6 @@ jobs:
         steps:
             - name: CODE CHECKOUT   
               uses: actions/checkout@v5
-
-            - name: Pull latest image
-              run: docker compose pull
 
             - name: docker compose
               run: docker compose up -d --force-recreate

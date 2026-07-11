@@ -23,8 +23,6 @@ jobs:
             - name: docker build and push
               uses: docker/build-push-action@v7
               with:
-                context: .
-                file:
                 push: true
                 tags: ${{ vars.DOCKERHUB_USERNAME }}/expenses_app:latest
 
