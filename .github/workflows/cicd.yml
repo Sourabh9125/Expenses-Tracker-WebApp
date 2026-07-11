@@ -2,10 +2,7 @@ name: CICD
 
 on:
   workflow_dispatch:
-  # workflow_run:
-  #   workflows: ["push to dockerhub"] # Must exactly match the name of your first workflow
-  #   types:
-  #     - completed
+  # push:
   #   branches: [test]
 
 
