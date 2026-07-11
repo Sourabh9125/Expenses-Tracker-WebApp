@@ -9,6 +9,7 @@ on:
 
 jobs:
     deploy:
+        if: ${{ github.event.workflow_run.conclusion == 'success' }}
         env:
             DOCKERHUB_USERNAME: ${{ vars.DOCKERHUB_USERNAME }}
         runs-on: self-hosted
