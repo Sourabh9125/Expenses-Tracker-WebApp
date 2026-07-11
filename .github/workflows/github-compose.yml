@@ -1,10 +1,10 @@
 name: deploying the application
 
 on:
-    workflow_run:
-        workflows: [push to dockerhub]   # Must exactly match the first workflow's name
-        types:
-        - completed
+  workflow_run:
+    workflows: [push to dockerhub]   # Must exactly match the first workflow's name
+    types:
+      - completed
 
 
 jobs:
