@@ -4,7 +4,8 @@ on:
   workflow_run:
     workflows: ["push to dockerhub"] # Must exactly match the name of your first workflow
     types:
-      - completed # Triggers when the first workflow finishes
+      - completed
+    branches: [test]
 
 
 
