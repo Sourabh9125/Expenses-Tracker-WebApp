@@ -18,7 +18,7 @@ services:
     restart: always
 
   expenses-app:
-    image: ${DOCKERHUB_USERNAME}//expenses_app:latest
+    image: ${DOCKERHUB_USERNAME}/expenses_app:latest
     container_name: expensesapp
     ports:
       - "8080:8080"
