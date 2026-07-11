@@ -10,12 +10,11 @@ services:
     networks:
       - java_app
     healthcheck:
-      test: ["CMD","mysqladmin","ping","-h","localhost","-uroot","-pTest@123"]
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-pTest@123"]
       interval: 10s
-      retries: 5
       timeout: 5s
-      start_period: 30s
-    restart: always
+      retries: 15
+      start_period: 60s
 
   expenses-app:
     image: ${DOCKERHUB_USERNAME}/expenses_app:latest
