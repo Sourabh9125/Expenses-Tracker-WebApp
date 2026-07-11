@@ -1,6 +1,8 @@
 name: deploying the application
 
 on:
+  push:
+        branches: [test]
   workflow_run:
     workflows: [push to dockerhub]   # Must exactly match the first workflow's name
     types:
